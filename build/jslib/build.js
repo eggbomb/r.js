@@ -1278,7 +1278,8 @@ define(function (require) {
                     exclude: config.exclude,
                     excludeShallow: config.excludeShallow,
                     insertRequire: config.insertRequire,
-                    stubModules: config.stubModules
+                    stubModules: config.stubModules,
+					forceSync: config.forceSync || false
                 }
             ];
             delete config.stubModules;
@@ -1967,8 +1968,8 @@ define(function (require) {
                 //was desired. Usually this is only specified when using small shim
                 //loaders like almond.
                 if (module.insertRequire) {
-                    fileContents += '\n' + namespaceWithDot + 'require(["' + module.insertRequire.join('", "') + '"]);\n';
-                }
+					fileContents += '\n' + namespaceWithDot + 'require(["' + module.insertRequire.join('", "') + '"], function(){}, "", ' + module.forceSync + ');\n';
+				}
             });
         }).then(function () {
             return {
