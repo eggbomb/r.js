@@ -1,7 +1,7 @@
 {
-  "name": "requirejs-fork",
+  "name": "requirejs",
   "description": "Node adapter for RequireJS, for loading AMD modules. Includes RequireJS optimizer",
-  "version": "0.0.1",
+  "version": "0.0.1a",
   "homepage": "http://github.com/eggbomb/r.js",
   "author": {
     "name": "James Burke",
